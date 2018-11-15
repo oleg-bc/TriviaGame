@@ -1,7 +1,28 @@
-//just an example
-//$(".crystal-image").on("click", function() {
+$(document).ready(function() {
+    // page is fully loaded, including all frames, objects and images
+    //alert("window is loaded");
+    var run=function() {
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 1000);
+    }
+    
+    function decrement() {
+        number--;
+        $("#showTimeLeft").html("<h2>" + number + "</h2>");
+        if (number === 0) {
+        stop();
+        $("#showTimeLeft").innerText+="  time's up ";
+        }
+    }
+    
+    var stop=function() {
+        clearInterval(intervalId);
+    }
+    
+    var number = 100;
+    var intervalId;
+    run();
 
-//var redirectTo;
 
 
 $(".startBtn").on("click", function(){ 
@@ -13,6 +34,7 @@ $(".startBtn").on("click", function(){
 });    
 
 $(".submitBtn").on("click", function(){
+    stop();
     var redirectTo;
     redirectTo="last";
     redirect(redirectTo);
@@ -33,12 +55,20 @@ var redirect = function(page) {
             // debug helper
     storeValue();
     console.log("redirected to quizpage" );
-        //window.location="lastpage.html";
+    window.location="lastpage.html";
     }
 
  }
 
-
+  var storeValue=function(){
+    var answers=[];  
+    var selValue = $('input[name=states]:checked').val(); 
+    var selValue2= $('input[name=presidents]:checked').val();
+      //$('p').html('<br/>Selected Radio Button Value is : <b>' + selValue + '</b>');
+      answers.push(selValue);
+      answers.push(selValue2);
+      console.log(answers);
+  }
 
  
 // <input type="radio" name="rbnNumber" value="1" /> Number 1<br/>
@@ -58,15 +88,7 @@ var redirect = function(page) {
       
 //   });
 
-  var storeValue=function(){
-    var answers=[];  
-    var selValue = $('input[name=states]:checked').val(); 
-    var selValue2= $('input[name=presidents]:checked').val();
-      //$('p').html('<br/>Selected Radio Button Value is : <b>' + selValue + '</b>');
-      answers.push(selValue);
-      answers.push(selValue2);
-      console.log(answers);
-  }
+
 
 // {/* <form id="q1"><br>How Many states in the union?<br>
 //             <input type="radio" name="states" value="49"> 49<br>
@@ -83,3 +105,14 @@ var redirect = function(page) {
 //         <input type="button" value="Submit" class="submitBtn">
 //       </form> */}
  
+
+// var number = 100;
+// var intervalId;
+//$("#stop").on("click", stop);
+
+//$("#resume").on("click", run);
+
+
+    //run();
+
+});
