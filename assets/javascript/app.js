@@ -68,9 +68,18 @@ var redirect = function(page) {
       answers.push(selValue);
       answers.push(selValue2);
       console.log(answers);
+      return answers[];
   }
 
- 
+ var evalAnswers=functions(answersArray){
+     //Determine how many questions were attempted - the length of the answersArray
+     //create an array with answers called ANSWRS - this is the quiz key
+     //create var correct answers
+     //check whether the element exists in the array ANSWRS
+     // increment correctAnswers var for each match
+ }
+
+
 // <input type="radio" name="rbnNumber" value="1" /> Number 1<br/>
 // <input type="radio" name="rbnNumber" value="2" /> Number 2 <br/>
 // <input type="radio" name="rbnNumber" value="3" /> Number 3
