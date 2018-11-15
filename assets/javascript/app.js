@@ -1,0 +1,85 @@
+//just an example
+//$(".crystal-image").on("click", function() {
+
+//var redirectTo;
+
+
+$(".startBtn").on("click", function(){ 
+    var redirectTo;
+    redirectTo="quiz";
+     //debugger:
+    console.log("Button clicked."); 
+    redirect(redirectTo);
+});    
+
+$(".submitBtn").on("click", function(){
+    var redirectTo;
+    redirectTo="last";
+    redirect(redirectTo);
+     //debugger:
+     console.log("Button clicked."); 
+    
+});
+
+
+
+var redirect = function(page) {
+    if (page=="quiz"){
+            // debug helper
+    console.log("redirected to quizpage" );
+        window.location="quizpage.html";
+    }
+    else if(page=="last"){
+            // debug helper
+    storeValue();
+    console.log("redirected to quizpage" );
+        //window.location="lastpage.html";
+    }
+
+ }
+
+
+
+ 
+// <input type="radio" name="rbnNumber" value="1" /> Number 1<br/>
+// <input type="radio" name="rbnNumber" value="2" /> Number 2 <br/>
+// <input type="radio" name="rbnNumber" value="3" /> Number 3
+// <br/><br/>
+// <input type="button" id="btnGetValue" Value="Get Value" />
+// <p></p>
+
+
+// $('#submitBtn').click(function() {
+//     var answers=[];  
+//     var selValue = $('input[name=states]:checked').val(); 
+//       //$('p').html('<br/>Selected Radio Button Value is : <b>' + selValue + '</b>');
+//       answers.push(selValue);
+//       console.log(answers);
+      
+//   });
+
+  var storeValue=function(){
+    var answers=[];  
+    var selValue = $('input[name=states]:checked').val(); 
+    var selValue2= $('input[name=presidents]:checked').val();
+      //$('p').html('<br/>Selected Radio Button Value is : <b>' + selValue + '</b>');
+      answers.push(selValue);
+      answers.push(selValue2);
+      console.log(answers);
+  }
+
+// {/* <form id="q1"><br>How Many states in the union?<br>
+//             <input type="radio" name="states" value="49"> 49<br>
+//             <input type="radio" name="states" value="50"> 50<br>
+//             <input type="radio" name="states" value="51"> 51<br>  
+          
+//           </form>
+
+  
+//     <form id="q2"><br>Who's the 1st president<br>
+//         <input type="radio" name="Hamilton" value="1"> Hamilton<br>
+//         <input type="radio" name="Washington" value="2"> Washington<br>
+//         <input type="radio" name="Lincoln" value="3"> Lincoln<br>  
+//         <input type="button" value="Submit" class="submitBtn">
+//       </form> */}
+ 
