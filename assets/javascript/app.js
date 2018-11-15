@@ -60,6 +60,8 @@ var redirect = function(page) {
 
  }
 
+
+ var correctAnswers=[];
   var storeValue=function(){
     var answers=[];  
     var selValue = $('input[name=states]:checked').val(); 
@@ -68,10 +70,22 @@ var redirect = function(page) {
       answers.push(selValue);
       answers.push(selValue2);
       console.log(answers);
-      return answers[];
+      return answers;
   }
 
- var evalAnswers=functions(answersArray){
+ var evalAnswers=function(answersArray){
+     var correctCounter =0;
+     var wrongCounter =0;
+     var questionsAttempted=answersArray.length;
+     if (answersArray>0){
+         for (i=0; i<answersArray.length;i++){
+             if (answersArray[i]==answrs[i]){
+                correctCounter++;
+             }else{wrongCounter++;}
+         }
+     }
+     else{//no questions answered
+    }
      //Determine how many questions were attempted - the length of the answersArray
      //create an array with answers called ANSWRS - this is the quiz key
      //create var correct answers
