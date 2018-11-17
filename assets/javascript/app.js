@@ -7,9 +7,7 @@ $(document).ready(function() {
     var run=function() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
-         
-        //     var usrAnswers=storeValue();
-        //    evalAnswers(usrAnswers,correctAnswers);
+
     }
     
     function decrement() {
