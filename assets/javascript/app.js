@@ -7,22 +7,34 @@ $(document).ready(function() {
     var run=function() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
+         
+        //     var usrAnswers=storeValue();
+        //    evalAnswers(usrAnswers,correctAnswers);
     }
     
     function decrement() {
+        
         number--;
+        var stopped=false;
         $("#showTimeLeft").html("<h2>" + number + "</h2>");
         if (number === 0) {
         stop();
+        var usrAnswers=storeValue();
+        evalAnswers(usrAnswers,correctAnswers);
         $("#showTimeLeft").innerText+="  time's up ";
+            stopped=true;
+        
         }
+        return stopped;
     }
     
+
     var stop=function() {
         clearInterval(intervalId);
+        
     }
     
-    var number = 100;
+    var number = 10;
     var intervalId;
     //run();
     stop();
@@ -80,16 +92,16 @@ var redirect = function(page) {
  //stores quiz answer key
  var correctAnswers=[50,"Washington"];
  //function to capture user answers returns an array
-  var storeValue=function(){
-    var answers=[];  
-    var selValue = $('input[name=states]:checked').val(); 
-    var selValue2= $('input[name=presidents]:checked').val();
-      //$('p').html('<br/>Selected Radio Button Value is : <b>' + selValue + '</b>');
-      answers.push(selValue);
-      answers.push(selValue2);
-      console.log("StoreValue returned following  "+answers);
-      return answers;
-  }
+var storeValue=function(){
+var answers=[];  
+var selValue = $('input[name=states]:checked').val(); 
+var selValue2= $('input[name=presidents]:checked').val();
+    //$('p').html('<br/>Selected Radio Button Value is : <b>' + selValue + '</b>');
+    answers.push(selValue);
+    answers.push(selValue2);
+    console.log("StoreValue returned following  "+answers);
+    return answers;
+}
 //when calling make sure to use correctAnswers in place of answers 
 //var usrAnswers=storeValue;
 //evalAnswers(usrAnswers,correctAnswers);
@@ -115,7 +127,7 @@ var redirect = function(page) {
     //debug statments - getting the evalAnswers to work
     console.log("# of correct answers is "+correctCounter);
    
-    $(".answered").text("<h3>You answered "+ correctCounter+ " of " + answersArray.length + " correctly</h3>");
+    $(".answered").text("You answered "+ correctCounter+ " of " + answersArray.length + " correctly");
 
  }
 });
