@@ -16,7 +16,7 @@ $(document).ready(function() {
         
         number--;
         var stopped=false;
-        $("#showTimeLeft").html("<h2>" + number + "</h2>");
+        $("#showTimeLeft").html("<h2>" + number +" Seconds Left </h2>");
         if (number === 0) {
         stop();
         //the next 2 lines is a bit of a hack and need to be fixed.
