@@ -2,7 +2,7 @@
 Repo for hw5 Trivia Game
 
 
-The README must contain at minimum a description of what the project is,
+This is a trivia game working prototype. The player can answer a few questions in timed race against the clock.
 
 tech used:
   
@@ -11,4 +11,8 @@ tech used:
   * JQUERY
   
     
-  technologies used, screenshots of essential code, and gif walkthroughs of the application functioning. 
+   Screenshots of essential code: below screenshot is of a functionality that was a block that came up towards the end. Sasha pointed me at the right direction.
+  
+  ![essential code](assets/images/essential-code.png "Optional Title")
+
+   and gif walkthroughs of the application functioning: 
