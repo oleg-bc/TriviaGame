@@ -1,6 +1,5 @@
 $(document).ready(function() {
-    // page is fully loaded, including all frames, objects and images
-    //alert("window is loaded");
+
     var run=function() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
@@ -23,8 +22,6 @@ $(document).ready(function() {
     var intervalId;
     run();
 
-
-
 $(".startBtn").on("click", function(){ 
     var redirectTo;
     redirectTo="quiz";
@@ -40,10 +37,14 @@ $(".submitBtn").on("click", function(){
     redirect(redirectTo);
      //debugger:
      console.log("Button clicked."); 
-    
+     var usrAnswers=storeValue();
+     //debug statement - find out why eval function not working
+     console.log("usrAnswers is - at time of being called  " + usrAnswers);
+     evalAnswers(usrAnswers,correctAnswers);
+     window.location="lastpage.html";
+     
+
 });
-
-
 
 var redirect = function(page) {
     if (page=="quiz"){
@@ -54,14 +55,15 @@ var redirect = function(page) {
     else if(page=="last"){
             // debug helper
     storeValue();
-    console.log("redirected to quizpage" );
+    console.log("redirected to lastpage" );
     window.location="lastpage.html";
-    }
-
+       
+    }   
  }
 
-
- var correctAnswers=[];
+ //stores quiz answer key
+ var correctAnswers=[50,"Washington"];
+ //function to capture user answers returns an array
   var storeValue=function(){
     var answers=[];  
     var selValue = $('input[name=states]:checked').val(); 
@@ -69,73 +71,36 @@ var redirect = function(page) {
       //$('p').html('<br/>Selected Radio Button Value is : <b>' + selValue + '</b>');
       answers.push(selValue);
       answers.push(selValue2);
-      console.log(answers);
+      console.log("StoreValue returned following  "+answers);
       return answers;
   }
-
- var evalAnswers=function(answersArray){
+//when calling make sure to use correctAnswers in place of answers 
+//var usrAnswers=storeValue;
+//evalAnswers(usrAnswers,correctAnswers);
+ var evalAnswers=function(answersArray,answers){
      var correctCounter =0;
      var wrongCounter =0;
      var questionsAttempted=answersArray.length;
-     if (answersArray>0){
+     //debug why this if seems to never start
+     if (answersArray.length>0){
+         //debug - find out why this function doesnt seem to start
+         console.log("answers Array at start of loop is length  "+answersArray.length+" and correctAnswers has " + answers.length);
          for (i=0; i<answersArray.length;i++){
-             if (answersArray[i]==answrs[i]){
+             if (answersArray[i]==answers[i]){
                 correctCounter++;
+                console.log("got a correct answer current count is  "+correctCounter);
+                
              }else{wrongCounter++;}
          }
      }
      else{//no questions answered
     }
-     //Determine how many questions were attempted - the length of the answersArray
-     //create an array with answers called ANSWRS - this is the quiz key
-     //create var correct answers
-     //check whether the element exists in the array ANSWRS
-     // increment correctAnswers var for each match
+
+    //debug statments - getting the evalAnswers to work
+    console.log("# of correct answers is "+correctCounter);
+   
+    $(".answered").text("<h3>You answered "+ correctCounter+ " of " + answersArray.length + " correctly</h3>");
+
  }
-
-
-// <input type="radio" name="rbnNumber" value="1" /> Number 1<br/>
-// <input type="radio" name="rbnNumber" value="2" /> Number 2 <br/>
-// <input type="radio" name="rbnNumber" value="3" /> Number 3
-// <br/><br/>
-// <input type="button" id="btnGetValue" Value="Get Value" />
-// <p></p>
-
-
-// $('#submitBtn').click(function() {
-//     var answers=[];  
-//     var selValue = $('input[name=states]:checked').val(); 
-//       //$('p').html('<br/>Selected Radio Button Value is : <b>' + selValue + '</b>');
-//       answers.push(selValue);
-//       console.log(answers);
-      
-//   });
-
-
-
-// {/* <form id="q1"><br>How Many states in the union?<br>
-//             <input type="radio" name="states" value="49"> 49<br>
-//             <input type="radio" name="states" value="50"> 50<br>
-//             <input type="radio" name="states" value="51"> 51<br>  
-          
-//           </form>
-
-  
-//     <form id="q2"><br>Who's the 1st president<br>
-//         <input type="radio" name="Hamilton" value="1"> Hamilton<br>
-//         <input type="radio" name="Washington" value="2"> Washington<br>
-//         <input type="radio" name="Lincoln" value="3"> Lincoln<br>  
-//         <input type="button" value="Submit" class="submitBtn">
-//       </form> */}
- 
-
-// var number = 100;
-// var intervalId;
-//$("#stop").on("click", stop);
-
-//$("#resume").on("click", run);
-
-
-    //run();
-
 });
+
