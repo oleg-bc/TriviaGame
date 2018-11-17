@@ -19,6 +19,7 @@ $(document).ready(function() {
         $("#showTimeLeft").html("<h2>" + number + "</h2>");
         if (number === 0) {
         stop();
+        //the next 2 lines is a bit of a hack and need to be fixed.
         var usrAnswers=storeValue();
         evalAnswers(usrAnswers,correctAnswers);
         $("#showTimeLeft").innerText+="  time's up ";
