@@ -91,15 +91,28 @@ var redirect = function(page) {
  }
 
  //stores quiz answer key
- var correctAnswers=[50,"Washington"];
+ var correctAnswers=[50,"Washington","None","Koala","Octopus","Harp"];
  //function to capture user answers returns an array
 var storeValue=function(){
 var answers=[];  
+
 var selValue = $('input[name=states]:checked').val(); 
 var selValue2= $('input[name=presidents]:checked').val();
+
+var selValue3= $('input[name=cat]:checked').val();
+var selValue4= $('input[name=aard]:checked').val();
+var selValue5= $('input[name=octo]:checked').val();
+var selValue6= $('input[name=harp]:checked').val();
+
+
     //$('p').html('<br/>Selected Radio Button Value is : <b>' + selValue + '</b>');
     answers.push(selValue);
     answers.push(selValue2);
+    answers.push(selValue3);
+    answers.push(selValue4);
+    answers.push(selValue5);
+    answers.push(selValue6);
+    
     console.log("StoreValue returned following  "+answers);
     return answers;
 }
