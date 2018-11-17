@@ -18,3 +18,5 @@ tech used:
 
 
    and gif walkthroughs of the application functioning: 
+
+![](https://github.com/oleg-bc/TriviaGame/blob/master/assets/images/2mtcwh.gif)
