@@ -2,6 +2,7 @@ body {
     background-image: url("../images/Flay Night 4 BG/Flat Night 4 BG.png");
 }
 
-.q1, .q2, .q3, .q4, .q5, .q6  {
+form, .q1, .q2, .q3, .q4, .q5, .q6, .answered, h2, h1 {
     color:white;
 }   
+

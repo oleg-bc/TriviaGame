@@ -22,6 +22,9 @@ $(document).ready(function() {
         //the next 2 lines is a bit of a hack and need to be fixed.
         var usrAnswers=storeValue();
         evalAnswers(usrAnswers,correctAnswers);
+        $(".pageOne").hide();
+        $(".pageThree").show();
+        $(".pageTwo").hide();
         $("#showTimeLeft").innerText+="  time's up ";
             stopped=true;
         
@@ -35,7 +38,7 @@ $(document).ready(function() {
         
     }
     
-    var number = 10;
+    var number = 45;
     var intervalId;
     //run();
     stop();
@@ -112,7 +115,7 @@ var selValue6= $('input[name=harp]:checked').val();
     answers.push(selValue4);
     answers.push(selValue5);
     answers.push(selValue6);
-    
+
     console.log("StoreValue returned following  "+answers);
     return answers;
 }
