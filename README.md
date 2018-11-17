@@ -14,7 +14,7 @@ tech used:
    Screenshots of essential code: below screenshot is of a functionality that was a block that came up towards the end. Sasha pointed me at the right direction.
   
   
-    ![alt text](https://github.com/oleg-bc/TriviaGame/blob/master/assets/images/essential-code.PNG "essential code")
+![screenshot](https://github.com/oleg-bc/TriviaGame/blob/master/assets/images/essential-code.PNG "essential code")
 
 
    and gif walkthroughs of the application functioning: 
