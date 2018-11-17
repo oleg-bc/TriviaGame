@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+    $(".pageOne").show();
+    $(".pageThree").hide();
+    $(".pageTwo").hide();
+       
     var run=function() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
@@ -20,7 +24,8 @@ $(document).ready(function() {
     
     var number = 100;
     var intervalId;
-    run();
+    //run();
+    stop();
 
 $(".startBtn").on("click", function(){ 
     var redirectTo;
@@ -28,6 +33,7 @@ $(".startBtn").on("click", function(){
      //debugger:
     console.log("Button clicked."); 
     redirect(redirectTo);
+    run();
 });    
 
 $(".submitBtn").on("click", function(){
@@ -41,8 +47,10 @@ $(".submitBtn").on("click", function(){
      //debug statement - find out why eval function not working
      console.log("usrAnswers is - at time of being called  " + usrAnswers);
      evalAnswers(usrAnswers,correctAnswers);
-     window.location="lastpage.html";
-     
+     //window.location="lastpage.html";
+     $(".pageOne").hide();
+     $(".pageThree").show();
+     $(".pageTwo").hide();
 
 });
 
@@ -50,13 +58,21 @@ var redirect = function(page) {
     if (page=="quiz"){
             // debug helper
     console.log("redirected to quizpage" );
-        window.location="quizpage.html";
+        //window.location="quizpage.html";
+        $(".pageOne").hide();
+        $(".pageThree").hide();
+        $(".pageTwo").show();
+        // When user wants to go to next...
+        
     }
     else if(page=="last"){
             // debug helper
     storeValue();
     console.log("redirected to lastpage" );
-    window.location="lastpage.html";
+    //window.location="lastpage.html";
+    $(".pageOne").hide();
+    $(".pageThree").show();
+    $(".pageTwo").hide();
        
     }   
  }

@@ -3,18 +3,43 @@
 <head>
   <title>simple trivia game:START PAGE</title>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
- 
-
-
 </head>
 <body>
+
+  <!-- first page  -->
+<div class="pageOne">
   <a href ='index.html'>back to index</a>
   <button type="button" class= "startBtn">Start The Time!</button> 
-  <!-- JAVASCRIPT  -->
+  </div>
+ <!-- 2nd page  -->    
+ <div class="pageTwo">
+  <a href ='index.html'>back to index</a>
+  <div id="showTimeLeft"></div>
+      <form id="q1"><br>How Many states in the union?<br>
+          <input type="radio" name="states" value="49"> 49<br>
+          <input type="radio" name="states" value="50"> 50<br>
+          <input type="radio" name="states" value="51"> 51<br>  
+          
+        </form>
+  <form id="q2"><br>Who's the 1st president<br>
+      <input type="radio" name="presidents" value="Hamilton"> Hamilton<br>
+      <input type="radio" name="presidents" value="Washington"> Washington<br>
+      <input type="radio" name="presidents" value="Lincoln"> Lincoln<br>  
+      <input type="button" value="Submit" class="submitBtn">
+    </form>
+  </div>
+<!-- third page -->
+<div class="pageThree">
+    <a href ='index.html'>Go Again</a>
+    <h1>result page</h1>
+    <div class="answered">Nothing Here Yet</div>
+    <div class="correctAnswers"></div>
+  </div>
+<!-- JAVASCRIPT  -->
   <!-- ========================================= -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript"></script>
   <script src="assets/javascript/app.js"></script>
-     
+
 </body>
 </html>
